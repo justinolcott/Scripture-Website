@@ -1,0 +1,4 @@
+/node_modules/
+/public/build/
+embeddings.csv
+.DS_Store
