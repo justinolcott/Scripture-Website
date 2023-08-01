@@ -10,6 +10,13 @@
   }
 </script>
 
+<svelte:head>
+  <title>My Svelte App</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Other meta tags, CSS links, etc. -->
+</svelte:head>
+
 <header>
   <div class="title">
     <h1>{title}</h1> <!-- Replace {title} with your desired title -->

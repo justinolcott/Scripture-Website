@@ -17,6 +17,7 @@ const bom_abbreviations = {
 };
 
 export function getAbbreviation(key) {
+    console.log("Abbreviation:", key, bom_abbreviations[key]);
     return bom_abbreviations[key];
 }
 
