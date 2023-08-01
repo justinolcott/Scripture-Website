@@ -1,2 +1,5 @@
 keys.txt
 embeddings.csv
+.conda
+embedding.csv
+embeddings.pkl

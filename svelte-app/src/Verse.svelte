@@ -51,7 +51,7 @@
     </div>
     <div class="column">
         <h4>Similar Verses via embeddings</h4>
-        {#each embeddings as similarVerse}
+        {#each embed as similarVerse}
             <p>{similarVerse[0]} {similarVerse[1]}</p>
         {/each}
       <!-- Future Component 4 -->

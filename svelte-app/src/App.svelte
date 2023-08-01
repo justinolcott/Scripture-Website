@@ -5,21 +5,31 @@
 	import Book from './Book.svelte';
 	import Chapter from './scriptures/Chapter.svelte';
 	import Verse from './Verse.svelte';
+	
+	import { getAbbreviation } from './names';
 
-	import bom from './scriptures/book-of-mormon.json'
-	import embeddings from './jsons/embedding_dict.json'
 
-	export let name;
+	import bom from './scriptures/book-of-mormon.json';
+	import embeddings from './jsons/embedding_dict.json';
+	import cfm from './jsons/bom_cfm_map.json';
+	import manual from './jsons/bom_manual_map.json';
+	import talks from './jsons/bom_talk_map.json';
+
+	//export let name;
+	let selectedWork = 'bofm';
 	let selectedBook = null;
+	let abbreviatedBook = null;
 	let selectedChapter = null;
 	let selectedVerse = null;
 	let subEmbedding = null
 
 	function handleBookSelection(book) {
 		selectedBook = book;
-		subEmbedding = embeddings[selectedBook.]
+		abbreviatedBook 
+		subEmbedding = embeddings[selectedBook.book];
 		// Perform any other actions based on the selected book
 		console.log('Selected book:', selectedBook.book);
+		console.log('Abb book:', getAbbreviation(selectedBook.book));
   	}
 
 	function handleChapterSelection(chapter) {
@@ -37,7 +47,7 @@
 	console.log("Embeddings:", embeddings);
 </script>
 
-<Header title="My App" />
+<Header title="Scripture References!" />
 <main>
 	
 	{#if selectedBook == null}
@@ -47,10 +57,8 @@
 	{:else if selectedVerse == null}
 		<Chapter chapter={selectedChapter} onSelectVerse={handleVerseSelection} />
 	{:else if selectedVerse != null}
-		<Verse verse={selectedVerse} embeddings={subEmbedding} />
+		<Verse verse={selectedVerse} embeddings={subEmbedding}/>
 	{/if}
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
 </main>
 <Footer />
 

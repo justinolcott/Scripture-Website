@@ -7,10 +7,10 @@
         onSelectBook(book);
       }
     }
-  </script>
+</script>
   
   <div>
-    <h2>Books</h2>
+    <h2>The Book of Mormon: Another Testament of Jesus Christ</h2>
     <ul>
       {#each books as book}
         <li>

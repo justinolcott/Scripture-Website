@@ -15,15 +15,14 @@
     <h1>{title}</h1> <!-- Replace {title} with your desired title -->
   </div>
 
-  <div class="dropdown">
+  <!-- <div class="dropdown">
     <select on:change={handleBookSelection}>
       <option value="">Select a book</option>
       <option value="book1">The Old Testament</option>
       <option value="book2">The New Testament</option>
       <option value="book3">The Book of Mormon</option>
-      <!-- Add more <option> elements for additional books -->
     </select>
-  </div>
+  </div> -->
 </header>
 
 <style>
@@ -37,7 +36,7 @@
     /* Add any desired styling for the header */
   }
 
-  .title, .dropdown {
+  /* .title, .dropdown {
     margin-bottom: 10px;
-  }
+  } */
 </style>
