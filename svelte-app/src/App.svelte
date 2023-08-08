@@ -3,17 +3,13 @@
 	import Footer from './Footer.svelte';
 	import Scripture from './Scripture.svelte';
 	import Book from './Book.svelte';
-	import Chapter from './scriptures/Chapter.svelte';
+	import Chapter from './Chapter.svelte';
 	import Verse from './Verse.svelte';
 	
 	import { getAbbreviation } from './names';
 
 
-	import bom from './scriptures/book-of-mormon.json';
-	import embeddings from './jsons/embedding_dict.json';
-	import cfm from './jsons/bom_cfm_map.json';
-	import manual from './jsons/bom_manual_map.json';
-	import talks from './jsons/bom_talk_map.json';
+	import { bom, embeddings, cfm, manual, talks } from './data.js';
 
 	//export let name;
 	let selectedWork = 'bofm';
@@ -96,7 +92,6 @@
 	}
 	
 	let books = bom.books;
-	console.log("Embeddings:", embeddings);
 </script>
 
 

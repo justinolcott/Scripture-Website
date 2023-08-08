@@ -1,13 +1,13 @@
 {
   "name": "svelte-app",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "type": "module",
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d public"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.0",
