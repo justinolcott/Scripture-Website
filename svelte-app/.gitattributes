@@ -1,0 +1,5 @@
+* linguist-vendored
+*.js linguist-vendored=true
+*.svelte linguist-vendored=true
+*.ipynb linguist-vendored=true
+*.html linguist-vendored=true
