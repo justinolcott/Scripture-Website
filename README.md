@@ -1,11 +1,12 @@
 # Scripture Website
 - Go to the website [here](https://justinolcott.github.io/Scripture-Website/).
 - The website is deployed using Github Pages.
+- The website is made in Svelte and the reference data was generated using Python.
 
 ## Embeddings
 - Embeddings were found for all scriptures using HuggingFace's all-MiniLM-L6-v2 model.
 - Similarity was found between all scriptures using the cosine between embeddings.
-- The code for embeddings can be found in the python folder
+- The code for embeddings can be found in the Python folder.
 - I also created a graph displaying all scriptures and their embeddings on a 2D graph to show similarity. If you download and zoom in, each dot has a label for its reference. You can see how different books cluster together.
 ![similarity](/images/output_15clusters_1font_bookcolored.png)
 
