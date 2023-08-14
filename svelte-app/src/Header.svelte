@@ -6,7 +6,6 @@
   function handleBookSelection(event) {
     selectedBook = event.target.value;
     // You can perform any actions based on the selected book here
-    console.log('Selected book:', selectedBook);
   }
 </script>
 

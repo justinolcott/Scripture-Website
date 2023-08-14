@@ -1,5 +1,5 @@
 <footer>
-    <p>2023 Your App</p>
+    <p>2023 Scripture Website</p>
   </footer>
   
   <style>
