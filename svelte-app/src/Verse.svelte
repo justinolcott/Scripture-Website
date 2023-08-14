@@ -4,12 +4,10 @@
     export let talks;
     export let cfmReferences;
     export let manualReferences;
-    console.log("Embeddings:", embeddings);
     let embed = [];
     if (verse.reference in embeddings) {
         embed = embeddings[verse.reference];
     }
-    console.log(embed);
 
 </script>
   
@@ -39,49 +37,61 @@
   
   <div class="container">
     <div class="verse-row">
-      <p>{verse.verse} {verse.text}</p>
+      <p>{verse && verse.verse} {verse && verse.text}</p>
     </div>
     <div class="column">
       <h3> General Conference </h3>
-      {#each talks as talk}
-      <div>
-        <h4>{talk.title}</h4>
-        <h4>{talk.author}</h4>
-        <p>{talk.role}</p>
-        <!-- <p>{talk.kicker}</p> -->
-        <p>{talk.date}</p>
-        <!-- <p>{talk.scripture}</p> -->
-        <!-- <p>{talk.content}</p> -->
-        <div>{@html (decodeURIComponent(talk.html))}</div>
-      </div>
-      {/each}
+      {#if talks && talks.length > 0}
+        {#each talks as talk}
+          <div>
+            <h4>{talk.title}</h4>
+            <h4>{talk.author}</h4>
+            <p>{talk.role}</p>
+            <p>{talk.date}</p>
+            <div>{@html (decodeURIComponent(talk.html))}</div>
+          </div>
+        {/each}
+      {:else}
+        <p>No talks available</p>
+      {/if}
     </div>
     <div class="column">
       <h3> Come, Follow Me</h3>
-      {#each cfmReferences as cfm}
-      <div>
-        <h5>{cfm.scripture}</h5>
-        <h4>{cfm.header}</h4>
-        <div>{(decodeURIComponent(cfm.content))}</div>
-      </div>
-      {/each}
+      {#if cfmReferences && cfmReferences.length > 0}
+        {#each cfmReferences as cfm}
+          <div>
+            <h5>{cfm.scripture}</h5>
+            <h4>{cfm.header}</h4>
+            <div>{(decodeURIComponent(cfm.content))}</div>
+          </div>
+        {/each}
+      {:else}
+        <p>No Come, Follow Me references available</p>
+      {/if}
     </div>
     <div class="column">
       <h3> Institute Manual </h3>
-      {#each manualReferences as ref}
-      <div>
-        <h5>{ref.scripture}</h5>
-        <h4>{ref.header}</h4>
-        <div>{(decodeURIComponent(ref.content))}</div>
-      </div>
-      {/each}
+      {#if manualReferences && manualReferences.length > 0}
+        {#each manualReferences as ref}
+          <div>
+            <h5>{ref.scripture}</h5>
+            <h4>{ref.header}</h4>
+            <div>{(decodeURIComponent(ref.content))}</div>
+          </div>
+        {/each}
+      {:else}
+        <p>No Institute Manual references available</p>
+      {/if}
     </div>
     <div class="column">
-        <h3>Similar Verses via embeddings</h3>
+      <h3>Similar Verses via embeddings</h3>
+      {#if embed && embed.length > 0}
         {#each embed as similarVerse}
-            <p>{similarVerse[0]} {similarVerse[1]}</p>
+          <p>{similarVerse[0]} {similarVerse[1]}</p>
         {/each}
-      <!-- Future Component 4 -->
+      {:else}
+        <p>No similar verses available</p>
+      {/if}
     </div>
   </div>
   

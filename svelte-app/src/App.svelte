@@ -31,7 +31,7 @@
 			return talks[selectedWork][abbreviatedBook][selectedChapter.chapter.toString()][selectedVerse.verse.toString()];
 		} else {
 			// Return a default value or handle the case when the property chain is not valid
-			console.log(selectedWork + " " + abbreviatedBook + " " + selectedChapter.chapter.toString() + ":" + selectedVerse.verse.toString());
+			//console.log(selectedWork + " " + abbreviatedBook + " " + selectedChapter.chapter.toString() + ":" + selectedVerse.verse.toString());
 			return null;
 		}
 	}
@@ -48,7 +48,7 @@
 			return cfm[selectedWork][abbreviatedBook][selectedChapter.chapter.toString()][selectedVerse.verse.toString()];
 		} else {
 			// Return a default value or handle the case when the property chain is not valid
-			console.log(selectedWork + " " + abbreviatedBook + " " + selectedChapter.chapter.toString() + ":" + selectedVerse.verse.toString());
+			//console.log(selectedWork + " " + abbreviatedBook + " " + selectedChapter.chapter.toString() + ":" + selectedVerse.verse.toString());
 			return null;
 		}
 	}
@@ -65,7 +65,7 @@
 			return manual[selectedWork][abbreviatedBook][selectedChapter.chapter.toString()][selectedVerse.verse.toString()];
 		} else {
 			// Return a default value or handle the case when the property chain is not valid
-			console.log(selectedWork + " " + abbreviatedBook + " " + selectedChapter.chapter.toString() + ":" + selectedVerse.verse.toString());
+			//console.log(selectedWork + " " + abbreviatedBook + " " + selectedChapter.chapter.toString() + ":" + selectedVerse.verse.toString());
 			return null;
 		}
 	}
@@ -75,20 +75,20 @@
 		abbreviatedBook = getAbbreviation(selectedBook.book);
 		subEmbedding = embeddings[selectedBook.book];
 		// Perform any other actions based on the selected book
-		console.log('Selected book:', selectedBook.book);
-		console.log("talkssss:", talks['bofm']['1-ne']['1']['1']);
+		//console.log('Selected book:', selectedBook.book);
+		//console.log("talkssss:", talks['bofm']['1-ne']['1']['1']);
   	}
 
 	function handleChapterSelection(chapter) {
 		selectedChapter = chapter;
 		// Perform any other actions based on the selected chapter
-		console.log('Selected chapter:', selectedChapter);
+		//console.log('Selected chapter:', selectedChapter);
 	}
 
 	function handleVerseSelection(verse) {
 		selectedVerse = verse;
-		console.log('Selected verse:', selectedVerse);
-		console.log("talks:", getTalks());
+		//console.log('Selected verse:', selectedVerse);
+		//console.log("talks:", getTalks());
 	}
 	
 	let books = bom.books;
